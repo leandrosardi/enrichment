@@ -41,7 +41,7 @@ BlackStack::Extensions::add ({
 
 # defining Pampa jobs
 BlackStack::Pampa.add_job({
-  :name => 'enrichment.lead.append',
+  :name => 'enrichment.lead.enrich',
 
   # Minimum number of tasks that a worker must have in queue.
   # Default: 5
@@ -60,13 +60,13 @@ BlackStack::Pampa.add_job({
   # The tasks table must have some specific fields for handling the tasks dispatching.
   :table => :fl_lead, # Note, that we are sending a class object here
   :field_primary_key => :id,
-  :field_id => :append_reservation_id,
-  :field_time => :append_reservation_time, 
-  :field_times => :append_reservation_times,
-  :field_start_time => :append_start_time,
-  :field_end_time => :append_end_time,
-  :field_success => :append_success,
-  :field_error_description => :append_error_description,
+  :field_id => :enrich_reservation_id,
+  :field_time => :enrich_reservation_time, 
+  :field_times => :enrich_reservation_times,
+  :field_start_time => :enrich_start_time,
+  :field_end_time => :enrich_end_time,
+  :field_success => :enrich_success,
+  :field_error_description => :enrich_error_description,
 
   # Function to execute for each task.
   :processing_function => Proc.new do |task, l, job, worker, *args|
