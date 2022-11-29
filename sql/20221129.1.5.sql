@@ -10,10 +10,10 @@ create table if not exists erc_order (
 );
 
 -- pampa fields for verification
-alter table fl_lead add enrich_reservation_id varchar(500) null;
-alter table fl_lead add enrich_reservation_time timestamp null;
-alter table fl_lead add enrich_reservation_times int null;
-alter table fl_lead add enrich_start_time timestamp null;
-alter table fl_lead add enrich_end_time timestamp null;
-alter table fl_lead add enrich_success boolean null;
-alter table fl_lead add enrich_error_description text null;
+alter table fl_lead add column if not exists enrich_reservation_id varchar(500) null;
+alter table fl_lead add column if not exists enrich_reservation_time timestamp null;
+alter table fl_lead add column if not exists enrich_reservation_times int null;
+alter table fl_lead add column if not exists enrich_start_time timestamp null;
+alter table fl_lead add column if not exists enrich_end_time timestamp null;
+alter table fl_lead add column if not exists enrich_success boolean null;
+alter table fl_lead add column if not exists enrich_error_description text null;
