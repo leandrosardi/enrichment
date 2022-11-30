@@ -9,6 +9,10 @@ create table if not exists erc_order (
     stat_enriched_leads bigint null
 );
 
+alter table erc_order add column if not exists "name" int not null;
+alter table erc_order add column if not exists delete_time timestamp null;
+alter table erc_order add column if not exists "status" boolean not null;
+
 -- pampa fields for verification
 alter table fl_lead add column if not exists enrich_reservation_id varchar(500) null;
 alter table fl_lead add column if not exists enrich_reservation_time timestamp null;
