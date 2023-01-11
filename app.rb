@@ -5,13 +5,6 @@ end
 get "/enrichment/", :agent => /(.*)/ do
     redirect2 "/enrichment/orders", params
 end
-get "/enrichment/login", :agent => /(.*)/ do
-    redirect2 "/login", params
-end
-# public screens (signup/landing page)
-get "/enrichment/signup", :agent => /(.*)/ do
-    erb :"/extensions/enrichment/views/signup", :layout => :"/views/layouts/public"
-end
 
 # internal app screens
 get "/enrichment/offer", :auth => true, :agent => /(.*)/ do
